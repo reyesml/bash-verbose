@@ -22,16 +22,16 @@ verbose=false
 
 # Parse options
 while [[ "$#" -gt 0 ]]; do
-    case "$1" in
-        -v|--verbose)
-            verbose=true
-            ;;
-        *)
-            echo "Unknown option: $1"
-            exit 1
-            ;;
-    esac
-    shift
+  case "$1" in
+    -v|--verbose)
+        verbose=true
+        ;;
+    *)
+        echo "Unknown option: $1"
+        exit 1
+        ;;
+  esac
+  shift
 done
 
 # If the verbose option is specified, then we point
