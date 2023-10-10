@@ -1,2 +1,2 @@
 # bash-verbose
-A little example of verbose options in bash
+This example demonstrates how to leverage I/O redirection to have greater control over script verbosity.
