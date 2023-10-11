@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+exec {orig_stdout}>&1
+exec {orig_stderr}>&2
+
+# enable_verbose_mode points stdout and stderr back
+# to thier original file descriptors
+function enable_verbose_mode() {
+  exec 1>&$orig_stdout
+  exec 2>&$orig_stderr
+}
+
+# disable_verbose_mode points stdout and stderr to
+# /dev/null.
+function disable_verbose_mode() {
+  exec 1>/dev/null
+  exec 2>/dev/null
+}
+
+# shout echo's out to the original stdout, regardless of
+# verbosity mode.
+function shout() {
+  >&$orig_stdout echo $@
+}
